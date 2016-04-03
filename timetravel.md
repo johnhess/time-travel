@@ -1,0 +1,318 @@
+# Coding Practices Worth Stealing from Industry
+
+---
+
+## Who am I?
+
+* Former TPPer
+* Perpetrator of countless great sins of programming
+* Working software engineer, among other things
+
+## Presenter Notes
+
+* Repentent sinner, I have been to the desert and seen the light!
+
+---
+
+## What's this talk about?
+
+* Sharing a few things I wish *I'd* have known 7 years ago when I started creating a body of research built on thousands of lines of code
+* Giving you some practices to think about and tools to try them out
+* Dispelling belief in magic (maybe)
+
+## Presenter Notes
+
+* I don't claim to know everything, this is just about what I *do* know, and feel is worth sharing
+* Having some threads to pull
+* Some people -- or at least I -- have this belief in magic.  Magic is anything you don't understand *yet*.  Sufficiently advanced technology and all that.  Maybe you know how to program, but the idea of making a web application like facebook is still a dark art.  Or Artificial Intelligence which is basically sorcery until someone points out it's really just statistics and for loops.
+
+---
+
+## Why bother?
+
+As we all know, research, collaboration, peer review and publishing are perfect processes because people don't make mistakes and always understand one another perfectly.
+
+Right...
+
+---
+
+So, let's take a look at a few things we could do better.
+
+* Correctness
+* Collaboration
+* Replicability
+* Publishing code
+
+---
+
+<img src="images/reinhart-rogoff.jpg" />
+
+---
+
+<img src="images/reinhart-rogoff-colbert.jpg" />
+
+.fx: imageslide
+
+## Presenter Notes
+
+* It's never good to see your face in the monologue...
+
+---
+
+## Getting code right turns out to be difficult...
+
+* Hard to believe, but this isn't a problem unique to Harvard!
+* Industry Average: "about 15 - 50 errors per 1000 lines of delivered
+code." *[Code Complete, Steve McConnel]*
+* Your research is important &#8756; *correctness matters*.
+* There are tools for this!
+
+---
+
+How do *you* verify correctness?
+
+---
+
+# Automated Testing
+
+---
+
+## Automated Testing
+
+Code that tests other code.  It has the same advantages code does:
+
+* It's fast & easy
+* It's consistent
+* Other people can read it
+
+## Presenter Notes
+
+Until a friend and mentor of mine sat with me and helped me write my first tests, testing was black magic to me.  
+
+The difference it's made in my productivity & quality is too big to understate.
+
+---
+
+<img src="images/beautiful-mind.jpg" />
+
+.fx: imageslide
+
+---
+
+## Example!
+
+    !python
+    # fib.py
+    def fib(n):
+        # recursively calculate Fibonaacci numbers
+        if n == 0:
+            return 0
+        elif n == 1:
+            return 1
+        else:
+            return fib(n-1) + fib(n-2)
+
+
+    for number in range(100):
+        print fib(number)
+
+---
+
+How do we know it's right?  I mean, it *looks* right...  Right?
+
+---
+
+## A test!
+
+    !python
+    # tests.py
+    from fib import fib
+
+    def test_fib_output():
+        # Check some known values
+        assert fib(0) == 0
+        assert fib(1) == 1
+        assert fib(2) == 1
+        assert fib(3) == 2
+        assert fib(4) == 3
+        assert fib(5) == 5
+
+---
+
+## Run the tests!
+
+(nosetests is just a program that automatically finds and runs your tests)
+
+    !bash
+    $ nosetests
+    .
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.001s
+
+    OK
+
+Success!
+
+---
+
+## Good!  Now what?
+
+On with our lives!  We can change the code, our colleagues can change it, we can build on top of it, etc.
+
+Alas, we soon find that this algorithm only gets us so far.
+
+    !python
+    >>> fib(1000)
+    ...
+    RuntimeError: maximum recursion depth exceeded
+
+Well, crap.
+
+---
+
+## Crap!  Now what?
+
+We *could* just go and fix this.
+
+But we can do one better!  Let's write a *new* test to cover this case:
+
+    !python
+    def test_fibr_large_numbers():
+        assert fibr(1000) > 0 # who even knows the 1000th Fibonacci number?!
+
+and run it...
+
+---
+
+## Run the tests!
+
+    !bash
+    .E
+    ----------------------------------------------------------------------
+    Ran 2 tests in 0.015s
+
+    FAILED (errors=1)
+    Failed - Back to work!
+
+---
+
+## A safety net for our high-flying mathematical and programming tricks
+
+Let's replace our recursive `fib()` function with an iterative one!
+
+Normally, we'd have to make sure our new work is just right.  But instead, we have tests now to make sure we don't break anything.
+
+---
+
+## A safety net for our high-flying mathematical and programming tricks
+
+Iterative version!
+
+    !python
+    # fib.py
+    def fib(n):
+        # iterative Fibonaacci calculation
+        a, b = 0, 1
+        for i in range(0, n):
+            a, b = b, a + b
+        return a
+
+Now run our exact same existing tests...
+
+---
+
+## Run the tests!
+
+    !bash
+    ..
+    ----------------------------------------------------------------------
+    Ran 2 tests in 0.015s
+
+    OK
+
+Hooray!
+
+---
+
+## Testing
+
+* Tests at different levels
+    * lowest levels (a.k.a. "Unit Testing")
+    * highest levels (a.k.a. "Functional/Integration Testing")
+* Check out what's available in your language.  You'd be surprised how easy people have made it to write and run tests.
+
+---
+
+# Collaboration
+
+## Presenter Notes
+
+Including collaboration with *future* you!
+
+---
+
+How do you collaborate with your colleagues?  Email?  Dropbox?  Something better?  Something worse?
+
+Who here routinely runs software written by other researchers?  Who improves on it?
+
+## Presenter Notes
+
+* This is a big problem out there in the world, and it only gets bigger as you work on more in-depth projects
+* It's not only a problem you find, but *if you have a solution*, you can do all sorts of things nobody'd bother with in the first place, like building off one another's code instead of writing every damned thing from scratch.
+
+---
+
+## Enter Version Control
+
+*The* way that coders collaborate in the modern world.
+
+
+---
+
+## Wisdom from Stack Overflow 
+
+
+Have you ever:
+
+* Made a change to code, realised it was a mistake and wanted to revert back?
+* Lost code or had a backup that was too old?
+* Had to maintain multiple versions of a product?
+* Wanted to see the difference between two (or more) versions of your code?
+* Wanted to prove that a particular change broke or fixed a piece of code?
+
+## Presenter Notes
+
+...you *do* use Stack Overflow, right?
+
+---
+
+* Wanted to review the history of some code?
+* Wanted to submit a change to someone else's code?
+* Wanted to share your code, or let other people work on your code?
+* Wanted to see how much work is being done, and where, when and by whom?
+* Wanted to experiment with a new feature without interfering with working code?
+
+---
+
+Other awesome things version control gives you for free:
+
+* A record of all changes, annotated and easily findable
+* A way to publish code in various forms (as-published, with bug fixes, new features, etc)
+* Backup
+* What happened?!
+
+And, you can use it for other things!
+
+* Hint: Ever dealt with having multiple people try to edit one thing?
+* These slides!
+* Version all the things!!!
+
+
+
+
+
+
+
+
+
+

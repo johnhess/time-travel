@@ -113,9 +113,6 @@ The difference it's made in my productivity & quality is too big to understate.
             return fib(n-1) + fib(n-2)
 
 
-    for number in range(100):
-        print fib(number)
-
 ---
 
 How do we know it's right?  I mean, it *looks* right...  Right?
@@ -200,7 +197,7 @@ and run it...
 
 Let's replace our recursive `fib()` function with an iterative one!
 
-Normally, we'd have to make sure our new work is just right.  But instead, we have tests now to make sure we don't break anything.
+Normally, we'd have to be really careful and make sure the new one just right.  But instead, we have tests now to make sure we don't break anything.
 
 ---
 
@@ -271,7 +268,6 @@ Who here routinely runs software written by other researchers?  Who improves on 
 
 ## Wisdom from Stack Overflow 
 
-
 Have you ever:
 
 * Made a change to code, realised it was a mistake and wanted to revert back?
@@ -292,6 +288,128 @@ Have you ever:
 * Wanted to see how much work is being done, and where, when and by whom?
 * Wanted to experiment with a new feature without interfering with working code?
 
+*(courtesy of the illustrious SO user si618, content CC BY-SA)*
+
+---
+
+## Okay, okay.  I see the light!  How do I use version control?
+
+Think of it like email.
+
+Github : Git :: Gmail : Email
+
+## Presenter Notes
+
+* Explain email analogy.  Talk about command line, GUI, web-based, etc.
+* There's this other neat corrolary of that relationship.  When you have such a well defined protocol lots of stuff works with it (foreshadowing!)
+* You thought you were done with those after you took the SAT, huh?
+
+---
+
+## How to use Git in 5 minutes or less
+
+*(or, how to keep your sanity working in teams!)*
+
+We start by creating a git repository and hosting it somewhere everyone can get to it.  Think of it like a dropbox folder with super powers tailor made for coding.
+
+---
+
+All the cool kids these days are using github, so we will too!
+
+<img src="images/silicon-valley-tv-show.jpg" />
+
+---
+
+## Step 0: Make that repository! 
+
+Creating a repository is actually pretty easy, and GitHub's documentation is particularly good:
+
+https://help.github.com/ 
+
+*(see "Good Resources for Learing Git and Github")*
+
+---
+
+## Desktop GUI applications
+
+<img src="images/github-desktop.png" />
+
+## Presenter Notes
+
+Remember, it's like email -- you can use git via a GUI
+
+---
+
+## The command line
+
+<img src="images/github-terminal.png" />
+
+---
+
+## Web applications
+
+*(at least for some functionality)*
+
+<img src="images/github-web.png" />
+
+---
+
+## Make some changes on their own "branch"
+
+* Git is *all* about changes!
+
+---
+
+## When those changes are ready, pull them into the master version
+
+* If you've ever heard the term "Pull Request", that's exactly what we're talking about
+* You can use this on your own or with a team
+* It means multiple people can work on the same code without ending up with the dreaded diverging "personal" versions
+
+<img src="images/git-branches.png" />
+
+---
+
+## The "Pull Request"
+
+* This is where it gets cool!
+* A more true to life example
+
+## Presenter Notes
+
+* We were perfectly happy with our (slow & limited) recursive fibonacci number calculator, but one of our labmates is using our code and pesky, such as labmates are, they need it to calculate really big fibonacci numbers
+* We get to go with the famous and passive agressive (in some circles) "Pull Requests Welcome!"
+    * In other words, you want it, you write it!
+    * Plus, we can optionally pull those changes back into our master version!
+
+---
+
+## An example Pull Request
+
+<img src="images/pull-request-convo.png" />
+
+---
+
+## An example Pull Request
+
+<img src="images/pull-request-diff.png" />
+
+---
+
+## So with just a bit of git-fu
+
+* You can publish/distribute your code in a convenient way
+* You can work on the same code with others in your lab or around the world
+* So, so much more!
+
+---
+
+## A moment of honesty
+
+* Git actually has a pretty steep learning curve :-/
+
+But, if you program every week and especially if you program with other people it is *SO* worth learning.
+
 ---
 
 Other awesome things version control gives you for free:
@@ -300,6 +418,7 @@ Other awesome things version control gives you for free:
 * A way to publish code in various forms (as-published, with bug fixes, new features, etc)
 * Backup
 * What happened?!
+* Hosted version for people to see and download (*cough* it can be provided with your papers *cough*)
 
 And, you can use it for other things!
 

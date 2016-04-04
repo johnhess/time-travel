@@ -399,12 +399,26 @@ Remember, it's like email -- you can use git via a GUI
 ## So with just a bit of git-fu
 
 * You can publish/distribute your code in a convenient way
+    * You can even mark specific versions like ("As used in Paper XYZ")
 * You can work on the same code with others in your lab or around the world
-* So, so much more!
+* So, so much more (just you wait and see...)
 
 ---
 
-## A moment of honesty
+## Oh! And, you can use it for other things!
+
+* Multiple people try to edit one thing... sound familiar?
+* These slides! [https://github.com/johnhess/time-travel](https://github.com/johnhess/time-travel)
+
+---
+
+<img src="images/version-all-the-things.jpg" />
+
+.fx: imageslide
+
+---
+
+## A brief reality check
 
 * Git actually has a pretty steep learning curve :-/
 
@@ -412,19 +426,6 @@ But, if you program every week and especially if you program with other people i
 
 ---
 
-Other awesome things version control gives you for free:
-
-* A record of all changes, annotated and easily findable
-* A way to publish code in various forms (as-published, with bug fixes, new features, etc)
-* Backup
-* What happened?!
-* Hosted version for people to see and download (*cough* it can be provided with your papers *cough*)
-
-And, you can use it for other things!
-
-* Hint: Ever dealt with having multiple people try to edit one thing?
-* These slides!
-* Version all the things!!!
 
 
 

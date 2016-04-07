@@ -28,6 +28,14 @@
 
 ---
 
+# What's this talk *not* about?
+
+<img src="images/python.jpg" />
+
+.fx: imageslide whiteheading
+
+---
+
 ## Why bother?
 
 As we all know, research, collaboration, peer review and publishing are perfect processes because people don't make mistakes and always understand one another perfectly.
@@ -424,15 +432,133 @@ Remember, it's like email -- you can use git via a GUI
 
 But, if you program every week and especially if you program with other people it is *SO* worth learning.
 
+## Presenter Notes
+
+And it works with all sorts of great tools
+
 ---
 
+# Let's be serious academics for a minute
 
+---
 
+# Publishing
 
+## Presenter Notes
 
+It matters.
 
+We can go through the motions, but we can also do better.
 
+And, we can do better in two ways.
 
+* Replicability
+* Reach
 
+---
 
+## Replicability
 
+* Publish your methodology
+* *Publish your code*
+    * Archivally
+    * Accessibly
+    * Understandably
+    * Extensibly
+    * Interactively
+
+---
+
+# Crash Course:  Internet
+
+<img src="images/client-server.svg" />
+
+## Presenter Notes
+
+Administering and maintaining the whole thing is expensive and time consuming.
+
+There is a better way!
+
+---
+
+# Use a Cookie Cutter!
+
+<img src="images/cookie-cutter.jpg" />
+
+.fx: imageslide whiteheading
+
+## Presenter Notes
+
+I can't stress enough how many ways there are to make software available on the Internet.
+
+I'll talk about just one, my favorite, but there are many, many good ones out there.
+
+It turns out that this makes life easier even if you don't use heroku, etc.
+
+---
+
+## Heroku
+
+* Give it your code
+* Makes running version available at yourthing.herokuapp.com
+
+---
+
+## What shape is this cookie-cutter?
+
+* Needs to be in a supported language
+* Needs one script to run that can "answer the phone"
+    * What should the user get at `yourthing.herokuapp.com`
+    * What should the user get at `yourthing.herokuapp.com/some/path/to/thing/10`
+* Needs to know how to start that script
+* Needs to know what dependencies you code has (any libraries you use, etc.)
+
+---
+
+If only there was a good way to express exactly what that looked like compared to our existing code...
+
+---
+
+If only there was a good way to express exactly what that looked like compared to our existing code...
+
+[A wild pull request appeared](https://github.com/johnhess/fibonacci/pull/3/files)
+
+---
+
+# [Heroku Demo]
+
+## Presenter Notes
+
+* Walk through pull request
+* Heroku
+    * Create application
+    * It attaches straight to github, that's cool
+    * 
+
+---
+
+So, starting from our original fibonacci code, we've got
+
+* Some guarantee of correctness
+* A medium for collaboration
+* A sane way for others to inspect and run the code behind our research publications
+* A sane way for others to offer improvements
+* A way to reach non-coders and share the ideas in our code
+
+---
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+John Hess
+<br/>
+john@jthess.com

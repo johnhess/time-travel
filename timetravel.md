@@ -6,25 +6,19 @@
 
 * Former TPPer
 * Perpetrator of countless great sins of programming
-* Working software engineer, among other things
-
-## Presenter Notes
-
-* Repentent sinner, I have been to the desert and seen the light!
+* Working software engineer, amongst other things
 
 ---
 
 ## What's this talk about?
 
-* Sharing a few things I wish *I'd* have known 7 years ago when I started creating a body of research built on thousands of lines of code
-* Giving you some practices to think about and tools to try them out
+* Things I wish *I'd* have known 7 years ago
+* Some tools to do things you already do, just better
 * Dispelling belief in magic (maybe)
 
 ## Presenter Notes
 
-* I don't claim to know everything, this is just about what I *do* know, and feel is worth sharing
-* Having some threads to pull
-* Some people -- or at least I -- have this belief in magic.  Magic is anything you don't understand *yet*.  Sufficiently advanced technology and all that.  Maybe you know how to program, but the idea of making a web application like facebook is still a dark art.  Or Artificial Intelligence which is basically sorcery until someone points out it's really just statistics and for loops.
+* What is belief in magic
 
 ---
 
@@ -34,11 +28,21 @@
 
 .fx: imageslide whiteheading
 
+## Presenter Notes
+
+I'll show a few things.  Python, heroku, nose, etc.  They're just examples of things that exist for most general purpose languages.
+
 ---
 
-## Why bother?
+## Obligatory Motivation Slide
 
-As we all know, research, collaboration, peer review and publishing are perfect processes because people don't make mistakes and always understand one another perfectly.
+Research, collaboration, peer review and publishing are perfect processes because people don't make mistakes and always understand one another perfectly.
+
+---
+
+## Obligatory Motivation Slide
+
+Research, collaboration, peer review and publishing are perfect processes because people don't make mistakes and always understand one another perfectly.
 
 Right...
 
@@ -50,6 +54,10 @@ So, let's take a look at a few things we could do better.
 * Collaboration
 * Replicability
 * Publishing code
+
+---
+
+# Correctness
 
 ---
 
@@ -74,6 +82,10 @@ So, let's take a look at a few things we could do better.
 code." *[Code Complete, Steve McConnel]*
 * Your research is important &#8756; *correctness matters*.
 * There are tools for this!
+
+## Presenter Notes
+
+The only citation in this whole presentation!
 
 ---
 
@@ -146,7 +158,7 @@ How do we know it's right?  I mean, it *looks* right...  Right?
 
 ## Run the tests!
 
-(nosetests is just a program that automatically finds and runs your tests)
+(`nosetests` is just a program that automatically finds and runs your tests)
 
     !bash
     $ nosetests
@@ -191,7 +203,7 @@ and run it...
 
 ## Run the tests!
 
-    !bash
+    !text
     .E
     ----------------------------------------------------------------------
     Ran 2 tests in 0.015s
@@ -228,7 +240,7 @@ Now run our exact same existing tests...
 
 ## Run the tests!
 
-    !bash
+    !text
     ..
     ----------------------------------------------------------------------
     Ran 2 tests in 0.015s
@@ -362,6 +374,12 @@ Remember, it's like email -- you can use git via a GUI
 
 ---
 
+## We've created our code repository, and it's holding our code as is.
+
+Now what?
+
+---
+
 ## Make some changes on their own "branch"
 
 * Git is *all* about changes!
@@ -394,13 +412,7 @@ Remember, it's like email -- you can use git via a GUI
 
 ## An example Pull Request
 
-<img src="images/pull-request-convo.png" />
-
----
-
-## An example Pull Request
-
-<img src="images/pull-request-diff.png" />
+[A real, live pull request](https://github.com/johnhess/fibonacci/pull/1)
 
 ---
 

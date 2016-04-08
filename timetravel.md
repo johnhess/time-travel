@@ -50,10 +50,10 @@ Right...
 
 So, let's take a look at a few things we could do better.
 
-* Correctness
-* Collaboration
-* Replicability
-* Publishing code
+1. Correctness
+2. Collaboration
+3. Replicability
+4. Publishing code
 
 ---
 
@@ -551,11 +551,10 @@ If only there was a good way to express exactly what that looked like compared t
 
 So, starting from our original fibonacci code, we've got
 
-* Some guarantee of correctness
-* A medium for collaboration
-* A sane way for others to inspect and run the code behind our research publications
-* A sane way for others to offer improvements
-* A way to reach non-coders and share the ideas in our code
+* Some guarantee of correctness (1) 
+* A medium for collaboration (2) 
+* A sane way for others to inspect and run the code behind our research publications (3)
+* A way to reach non-coders and share the ideas in our code (4)
 
 ---
 

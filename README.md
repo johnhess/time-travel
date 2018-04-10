@@ -14,3 +14,6 @@ Why do these things?  Because they make it easier and more effective to do what 
 * Publish
 
 Talk delivered at MIT in April 2016
+
+See the compiled slides here!
+http://johnhess.github.io/time-travel/output/timetravel.html

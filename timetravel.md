@@ -4,15 +4,15 @@
 
 ## Who am I?
 
-* Former TPPer
+* One-time grad student with code-powered research & thesis
 * Perpetrator of countless great sins of programming
-* Working software engineer, amongst other things
+* Working* software engineer, amongst other things
 
 ---
 
 ## What's this talk about?
 
-* Things I wish *I'd* have known 7 years ago
+* Things I wish *I'd* have known 12 years ago
 * Some tools to do things you already do, just better
 * Dispelling belief in magic (maybe)
 
@@ -91,6 +91,13 @@ The only citation in this whole presentation!
 
 How do *you* verify correctness?
 
+## Presenter Notes
+
+Use a well-understood data sample as an input
+Make sure the output values don't change when I change/expand code
+Use a reference case with a known output (is that always possible?)
+Compare to other sources (great, but what if you're doing something novel?)
+
 ---
 
 # Automated Testing
@@ -107,9 +114,9 @@ Code that tests other code.  It has the same advantages code does:
 
 ## Presenter Notes
 
-Until a friend and mentor of mine sat with me and helped me write my first tests, testing was black magic to me.  
+Until a friend and mentor of mine sat with me and helped me write my first tests, testing was "magic" to me.  
 
-The difference it's made in my productivity & quality is too big to understate.
+The difference it's made in my productivity & quality is too big to overstate.
 
 ---
 
@@ -195,7 +202,7 @@ But we can do one better!  Let's write a *new* test to cover this case:
 
     !python
     def test_fibr_large_numbers():
-        assert fibr(1000) > 0 # who even knows the 1000th Fibonacci number?!
+        assert fib(1000) > 0 # who even knows the 1000th Fibonacci number?!
 
 and run it...
 
@@ -217,7 +224,7 @@ and run it...
 
 Let's replace our recursive `fib()` function with an iterative one!
 
-Normally, we'd have to be really careful and make sure the new one just right.  But instead, we have tests now to make sure we don't break anything.
+Normally, we'd have to be really careful and make sure the new one is just right.  But instead, we have tests now to make sure we don't break anything.
 
 ---
 
@@ -334,9 +341,13 @@ We start by creating a git repository and hosting it somewhere everyone can get 
 
 ---
 
-All the cool kids these days are using github, so we will too!
+All the cool kids these days* are using github, so we will too!
 
 <img src="images/silicon-valley-tv-show.jpg" />
+
+## Presenter Notes
+
+These days have changed.  This show was very popular 5 years ago, which you may know as the "olden days"
 
 ---
 
@@ -386,7 +397,7 @@ Now what?
 
 ---
 
-## When those changes are ready, pull them into the master version
+## "Pull" your changes into the main (née master) version
 
 * If you've ever heard the term "Pull Request", that's exactly what we're talking about
 * You can use this on your own or with a team
@@ -406,7 +417,7 @@ Now what?
 * We were perfectly happy with our (slow & limited) recursive fibonacci number calculator, but one of our labmates is using our code and pesky, such as labmates are, they need it to calculate really big fibonacci numbers
 * We get to go with the famous and passive agressive (in some circles) "Pull Requests Welcome!"
     * In other words, you want it, you write it!
-    * Plus, we can optionally pull those changes back into our master version!
+    * Plus, we can optionally pull those changes back into our main version!
 
 ---
 
